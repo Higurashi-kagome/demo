@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7457381a-a80c-4743-b4d7-f54707c79ae6" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$PROJECT_DIR$/../../../../../../Program Files/apache-maven-3.6.1" />
+        <option name="userSettingsFile" value="C:\Program Files\apache-maven-3.6.1\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2EROUYRPIh0fEN0ljlRSIhjudKf" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;ShowUsagesActions.previewPropertyKey&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/liuhao/Documents/GitHub/demo/JavaPrinter/src/main/java/com/zhangmingge/printer/escpos/mine&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.38850576&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\liuhao\Documents\GitHub\demo\JavaPrinter\src\main\java\com\zhangmingge\printer\escpos\mine" />
+      <recent name="C:\Users\liuhao\Documents\GitHub\demo\JavaPrinter\src\main\java\com\zhangmingge\printer\entity" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.zhangmingge.printer.escpos.mine" />
+      <recent name="com.zhangmingge.printer.escpos" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.com.zhangmingge.printer.RemoteTest">
+    <configuration name="LocalTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.zhangmingge.printer.LocalTest" />
+      <module name="JavaPrinter" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zhangmingge.printer.common.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.zhangmingge.printer.RemoteTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.zhangmingge.printer.RemoteTest" />
+      <module name="JavaPrinter" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zhangmingge.printer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ESCPOSTest.print" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JavaPrinter" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zhangmingge.printer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.zhangmingge.printer" />
+      <option name="MAIN_CLASS_NAME" value="com.zhangmingge.printer.ESCPOSTest" />
+      <option name="METHOD_NAME" value="print" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LocalPrinter.localPrint" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JavaPrinter" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zhangmingge.printer.escpos.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.zhangmingge.printer.escpos" />
+      <option name="MAIN_CLASS_NAME" value="com.zhangmingge.printer.escpos.LocalPrinter" />
+      <option name="METHOD_NAME" value="localPrint" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LocalSample.Cut" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JavaPrinter" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zhangmingge.printer.escpos.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.zhangmingge.printer.escpos" />
+      <option name="MAIN_CLASS_NAME" value="com.zhangmingge.printer.escpos.LocalSample" />
+      <option name="METHOD_NAME" value="Cut" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.com.zhangmingge.printer.RemoteTest" />
+      <item itemvalue="Application.LocalTest" />
+      <item itemvalue="JUnit.ESCPOSTest.print" />
+      <item itemvalue="JUnit.LocalSample.Cut" />
+      <item itemvalue="JUnit.LocalPrinter.localPrint" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.com.zhangmingge.printer.RemoteTest" />
+        <item itemvalue="JUnit.ESCPOSTest.print" />
+        <item itemvalue="JUnit.LocalSample.Cut" />
+        <item itemvalue="Application.LocalTest" />
+        <item itemvalue="JUnit.LocalPrinter.localPrint" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7457381a-a80c-4743-b4d7-f54707c79ae6" name="Changes" comment="" />
+      <created>1662554947153</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1662554947153</updated>
+      <workItem from="1662554948686" duration="1863000" />
+      <workItem from="1662595503198" duration="7917000" />
+      <workItem from="1662624740831" duration="1503000" />
+      <workItem from="1662637473099" duration="1246000" />
+      <workItem from="1662641174883" duration="15368000" />
+      <workItem from="1662716071624" duration="295000" />
+      <workItem from="1662716466561" duration="4394000" />
+      <workItem from="1662770576791" duration="17601000" />
+      <workItem from="1662796901140" duration="4498000" />
+      <workItem from="1662806907360" duration="604000" />
+      <workItem from="1662812283304" duration="1130000" />
+      <workItem from="1662852199231" duration="2285000" />
+      <workItem from="1662854531101" duration="12749000" />
+      <workItem from="1662895425124" duration="1662000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<!--作用域插槽（带有数据的插槽）-->
+<body>
+    <div id="app">
+      <current-user>
+        {{ user.firstName }}
+      </current-user>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+      Vue.component('current-user', {
+        template: `
+          <span>
+            <!--绑定在 <slot> 元素上的 attribute 被称为插槽 prop-->
+            <slot v-bind:user="user">
+              {{ user.lastName }}
+            </slot>
+          </span>
+        `
+      })
+      new Vue({
+        el: '#app',
+        data: {
+          user: {firstName: 'a', firstName: 'b'}
+        }
+      })
+    </script>
+</body>
+
+</html>

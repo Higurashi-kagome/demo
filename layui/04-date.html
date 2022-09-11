@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 引入 layui.css -->
+    <link href="//unpkg.com/layui@2.7.6/dist/css/layui.css" rel="stylesheet">
+    <!-- 引入 layui.js -->
+    <script src="//unpkg.com/layui@2.7.6/dist/layui.js"></script>
+    <!-- 引入 jquery.js -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>日期</title>
+</head>
+<body>
+    <div class="layui-form">
+        <div class="layui-form-item">
+          <div class="layui-inline">
+            <label class="layui-form-label">中文版</label>
+            <div class="layui-input-inline">
+              <input type="text" class="layui-input" id="test1" placeholder="yyyy-MM-dd">
+            </div>
+          </div>
+        </div>
+    </div>
+    <script>
+        layui.use('laydate', function(){
+            let laydate = layui.laydate;
+            // 执行一个 laydate 实例
+            laydate.render({
+                elem: '#test1' //指定元素
+            });
+        })
+    </script>
+</body>
+</html>

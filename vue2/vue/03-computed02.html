@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<!--
+计算属性 vs 侦听属性
+  你有一些数据需要随着其它数据变动而变动时，你很容易滥用 watch。
+  然而，通常更好的做法是使用计算属性而不是命令式的 watch 回调
+-->
+<body>
+  <div id="demo1">{{ fullName }}</div>
+  <div id="demo2">{{ fullName }}</div>
+  <script src="vue.js"></script>
+  <script>
+    var vm1 = new Vue({
+      el: '#demo1',
+      data: {
+        firstName: 'Foo',
+        lastName: 'Bar',
+        fullName: 'Foo Bar'
+      },
+      watch: {
+        firstName: function (val) {
+          this.fullName = val + ' ' + this.lastName
+        },
+        lastName: function (val) {
+          this.fullName = this.firstName + ' ' + val
+        }
+      }
+    })
+    var vm2 = new Vue({
+      el: '#demo2',
+      data: {
+        firstName: 'Foo',
+        lastName: 'Bar'
+      },
+      computed: {
+        fullName: function () {
+          return this.firstName + ' ' + this.lastName
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

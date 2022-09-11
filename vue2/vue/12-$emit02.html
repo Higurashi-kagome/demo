@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<!--$emit（配合额外的参数使用）-->
+<body>
+  <div id="app">
+    <magic-eight-ball v-on:give-advice="showAdvice"></magic-eight-ball>
+  </div>
+  <script src="vue.js"></script>
+  <script>
+    Vue.component('magic-eight-ball', {
+      data: function () {
+        return {
+          possibleAdvice: ['Yes', 'No', 'Maybe']
+        }
+      },
+      methods: {
+        giveAdvice: function () {
+          var randomAdviceIndex = Math.floor(Math.random() * this.possibleAdvice.length)
+          this.$emit('give-advice', this.possibleAdvice[randomAdviceIndex])
+        }
+      },
+      template: `
+        <button v-on:click="giveAdvice">
+          Click me for advice
+        </button>
+      `
+    })
+    new Vue({
+      el: '#app',
+      methods: {
+        showAdvice: function (advice) {
+          alert(advice)
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<!--插槽内容-->
+<body>
+    <div id="app">
+      <navigation-link>
+        Your Profile
+      </navigation-link>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+      Vue.component('navigation-link', {
+        template: `
+          <a
+            class="nav-link"
+          >
+            <slot></slot>
+          </a>
+        `
+      })
+      new Vue({ el: '#app' })
+    </script>
+</body>
+
+</html>

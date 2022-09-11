@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<!--$emit（只配合一个事件名使用）-->
+<body>
+  <div id="app">
+    <welcome-button v-on:welcome="sayHi"></welcome-button>
+  </div>
+  <script src="vue.js"></script>
+  <script>
+    Vue.component('welcome-button', {
+      template: `
+        <button v-on:click="$emit('welcome')">
+          Click me to be welcomed
+        </button>
+      `
+    })
+    new Vue({
+      el: '#app',
+      methods: {
+        sayHi: function () {
+          alert('Hi!')
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

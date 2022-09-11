@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<!--slot-scope: https://www.bilibili.com/video/BV1MU4y1n7j9-->
+<body>
+  <div id="app">
+    <current-user>
+      <template slot-scope="slotProps">
+        {{ slotProps.boundUser.firstName }}
+      </template>
+    </current-user>
+  </div>
+  <script src="vue.js"></script>
+  <script>
+    Vue.component('current-user', {
+      data() {
+        return {
+          user: {firstName: 'a', firstName: 'b'}
+        }
+      },
+      template: `
+        <span>
+          <!--绑定在 <slot> 元素上的 attribute 被称为插槽 prop-->
+          <slot v-bind:boundUser="user">
+            {{ user.lastName }}
+          </slot>
+        </span>
+      `
+    })
+    new Vue({
+      el: '#app'
+    })
+  </script>
+</body>
+
+</html>

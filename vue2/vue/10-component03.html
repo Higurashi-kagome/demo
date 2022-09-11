@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<!--通过 Prop 向子组件传递数据-->
+<body>
+    <div id="components-demo">
+        <blog-post title="My journey with Vue"></blog-post>
+        <blog-post title="Blogging with Vue"></blog-post>
+        <blog-post title="Why Vue is so fun"></blog-post>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        // 我们能够在组件实例中访问 title，就像访问 data 中的值一样
+        Vue.component('blog-post', {
+            props: ['title'],
+            template: '<h3>{{ title }}</h3>'
+        })
+        new Vue({ el: '#components-demo' })
+    </script>
+</body>
+
+</html>

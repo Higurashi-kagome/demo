@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<!--slot attribute-->
+<body>
+    <div id="app">
+      <!--在 <template> 上使用特殊的 slot attribute，可以将内容从父级传给具名插槽-->
+      <base-layout>
+        <template slot="header">
+          <h1>Here might be a page title</h1>
+        </template>
+
+        <p>A paragraph for the main content.</p>
+        <p>And another one.</p>
+
+        <template slot="footer">
+          <p>Here's some contact info</p>
+        </template>
+      </base-layout>
+      <!--或者直接把 slot attribute 用在一个普通元素上：-->
+      <base-layout>
+        <h1 slot="header">Here might be a page title</h1>
+
+        <p>A paragraph for the main content.</p>
+        <p>And another one.</p>
+
+        <p slot="footer">Here's some contact info</p>
+      </base-layout>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+      Vue.component('base-layout', {
+        template: `
+          <div class="container">
+            <header>
+              <slot name="header"></slot>
+            </header>
+            <main>
+              <!--这里其实还有一个未命名插槽，也就是默认插槽，捕获所有未被匹配的内容。-->
+              <slot></slot>
+            </main>
+            <footer>
+              <slot name="footer"></slot>
+            </footer>
+          </div>
+        `
+      })
+      new Vue({ el: '#app' })
+    </script>
+</body>
+
+</html>
