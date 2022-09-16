@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * 扫描器有配置工具，将其配置为请求 /test 路径，每次扫描，扫描器都会发送 HTTP 请求，其他的只是获取请求，解析请求数据。
+ */
 @RestController
 public class TestScanner {
     @RequestMapping(value = "/test", consumes = MediaType.TEXT_HTML_VALUE, produces = MediaType.TEXT_HTML_VALUE)
