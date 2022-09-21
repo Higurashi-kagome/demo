@@ -1,14 +1,11 @@
 package api;
 
 import com.sun.jna.Library;
-//import com.sun.jna.Native;
 
-public class Declare
-{
-	/**
-	 * RFID 读写器（Radio Frequency Identification）API
-	 */
-	public interface RFID extends Library{
+/**
+ * RFID 读写器（Radio Frequency Identification）API
+ */
+public interface RFID extends Library {
 		/**
 		 * 初始化串口
 		 * @param port 串口号，取值为0～3
@@ -198,4 +195,3 @@ public class Declare
 		 */
 		public short a_hex(byte[] a,byte[] hex,short len);
 	}
-}

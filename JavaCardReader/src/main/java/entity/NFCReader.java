@@ -1,11 +1,10 @@
 package entity;
 
+import api.RFID;
 import cn.hutool.core.util.ArrayUtil;
 import cn.hutool.core.util.ByteUtil;
 import cn.hutool.core.util.HexUtil;
-import cn.hutool.core.util.ReUtil;
 import com.sun.jna.Native;
-import api.Declare;
 import org.apache.commons.lang3.StringUtils;
 
 import java.nio.charset.Charset;
@@ -29,7 +28,7 @@ public class NFCReader {
      */
     private byte[] curSnr = new byte[5];
 
-    public Declare.RFID rf = null;
+    public RFID rf = null;
 
     /**
      * 端口号<br>
@@ -39,7 +38,7 @@ public class NFCReader {
     private int port = 0;
 
     public NFCReader() {
-        rf = Native.loadLibrary("rf32", Declare.RFID.class);
+        rf = Native.loadLibrary("rf32", RFID.class);
         if (rf != null) {
             System.out.println("DLL加载成功！");
         } else {
