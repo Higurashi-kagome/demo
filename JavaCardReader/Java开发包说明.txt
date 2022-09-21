@@ -1,0 +1,2 @@
+此示例利用了jna技术，需要jna.jar包，下载jna.jar包后放在jdk的lib文件夹下。
+在所建示例的属性，java构建路径中，添加外部jar,将jna.jar添加进工程。
