@@ -8,7 +8,9 @@ import com.sun.jna.Native;
 import org.apache.commons.lang3.StringUtils;
 
 import java.nio.charset.Charset;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -20,7 +22,7 @@ public class NFCReader {
     private short resultCode = 1;
 
     /**
-     * ic 卡标识符
+     * 读卡器标识符
      */
     private Integer icDev = 0;
     /**
@@ -195,21 +197,23 @@ public class NFCReader {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        // rf32.dll 位于 jna jar 包根目录
         NFCReader con = new NFCReader();
         con.connect();
-        Set<String> snrSet = new HashSet<>();
+        // 卡序列号字符串为键，卡中保存的 JSON 字符串为值
+        Map<String, String> dataMap = new HashMap<>();
         while (true) {
             String snrStr = con.findCard();
-            if (snrSet.contains(snrStr)) continue;
             if (StringUtils.isBlank(snrStr)) {
                 Thread.sleep(500);
             } else {
-                snrSet.add(snrStr);
                 String jsonStr = con.readJson();
                 if (StringUtils.isBlank(jsonStr)) {
                     System.err.println("未找到 JSON 字符串");
                 } else {
+                    // 记录过该卡，且上次读取的数据和此次读取的数据相同时，跳过
+                    if (dataMap.containsKey(snrStr)
+                            && dataMap.get(jsonStr).equals(jsonStr)) continue;
+                    dataMap.put(snrStr, jsonStr);
                     System.out.println("jsonStr = " + jsonStr);
                     con.beep(50);
                 }
