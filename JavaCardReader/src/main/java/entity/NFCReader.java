@@ -212,10 +212,10 @@ public class NFCReader {
                 } else {
                     // 记录过该卡，且上次读取的数据和此次读取的数据相同时，跳过
                     if (dataMap.containsKey(snrStr)
-                            && dataMap.get(jsonStr).equals(jsonStr)) continue;
+                            && dataMap.get(snrStr).equals(jsonStr)) continue;
                     dataMap.put(snrStr, jsonStr);
                     System.out.println("jsonStr = " + jsonStr);
-                    con.beep(50);
+//                    con.beep(50);
                 }
             }
         }
