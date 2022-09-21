@@ -1,12 +1,16 @@
 package entity;
 
 import cn.hutool.core.util.ArrayUtil;
+import cn.hutool.core.util.ByteUtil;
 import cn.hutool.core.util.HexUtil;
+import cn.hutool.core.util.ReUtil;
 import com.sun.jna.Native;
 import api.Declare;
 import org.apache.commons.lang3.StringUtils;
 
 import java.nio.charset.Charset;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -21,11 +25,11 @@ public class NFCReader {
      */
     private Integer icDev = 0;
     /**
-     * 卡序列号
+     * 当前卡的序列号
      */
-    private byte[] snr = new byte[5];
+    private byte[] curSnr = new byte[5];
 
-    Declare.RFID rf = null;
+    public Declare.RFID rf = null;
 
     /**
      * 端口号<br>
@@ -86,10 +90,9 @@ public class NFCReader {
             resultCode = rf.rf_load_key(icDev, (short) 0, i, key);
             if (resultCode != 0) {
                 System.err.println("加载 " + i + " 扇区密码失败！" + getErrCodeMsg());
-            } else {
-                System.out.println("加载 " + i + " 扇区密码成功！");
             }
         }
+        System.out.println("加载扇区密码成功！");
     }
 
     /**
@@ -97,16 +100,19 @@ public class NFCReader {
      * @return 找到返回 JSON 字符串，没找到返回空字符串
      */
     public String readJson() {
-        byte[] allData = readAllBytes();
-        String s = new String(allData);
+        byte[] allBytes = readAllBytes();
+        System.out.println("allBytes = " + String.valueOf(HexUtil.encodeHex(allBytes)));
+        String strData = new String(allBytes);
         //匹配 json 对象字符串
         String jsonStr = "";
         Pattern pattern = Pattern.compile("(\\{[^\\{\\}]*\\})");
-        Matcher matcher = pattern.matcher(s);
+        Matcher matcher = pattern.matcher(strData);
         if (matcher.find()) {
             jsonStr = matcher.group(0);
+        } else {
+            System.err.println("strData = " + strData);
         }
-        // 采用ALL模式寻卡（见 findCard 中的 rf_card），结束时执行 rf_halt，避免寻卡总是一次对，一次错
+        // 选择IDLE模式，在对卡进行读写操作，执行rf_halt()rf_halt指令中止卡操作后，只有当该卡离开并再次进入操作区时，读写器才能够再次对它进行操作
         rf.rf_halt(icDev);
         return jsonStr;
     }
@@ -118,26 +124,33 @@ public class NFCReader {
     public byte[] readAllBytes() {
         byte[] allBytes = new byte[0];
         byte[] rdata = new byte[16];
-        int sector = 0;
-        resultCode = rf.rf_authentication(icDev, (short) 0, (short) sector);
+        resultCode = rf.rf_authentication(icDev, (short) 0, (short) 0);
         if (resultCode != 0) {
-            System.err.println(sector + "扇区密码验证错误！" + getErrCodeMsg());
+            System.err.println("0 扇区密码验证错误！" + getErrCodeMsg());
         }
-        for (int i = 1; i < 64; i++) {
-            if ((i + 1) % 4 == 1) { // 每进入一个新的扇区，都要进行验证
+        // sector——扇区号（总共 16 个扇区）；b——块编号，从 0 开始（每个扇区 4 个块，16 个扇区，总共 64 块）；
+        // 第 0 块数据被固化，不可写入，所以从块 1 开始读
+        for (int b = 1, sector = 0; b < 64; b++) {
+            // 每进入一个新的扇区，都要进行验证
+            if ((b + 1) % 4 == 1) {
                 sector++;
                 resultCode = rf.rf_authentication(icDev, (short) 0, (short) sector);
                 if (resultCode != 0) {
                     System.err.println(sector + "扇区密码验证错误！" + getErrCodeMsg());
                 }
             }
-            if ((i + 1) % 4 != 0) { // 每个扇区的第四块为特殊块，不存数据
-                resultCode = rf.rf_read(icDev, (short) i, rdata);
+            // 每个扇区的第四块为特殊块，不存数据
+            if ((b + 1) % 4 != 0) {
+                resultCode = rf.rf_read(icDev, (short) b, rdata);
                 if (resultCode == 0) {
-                    System.out.println(HexUtil.encodeHex(rdata));
+                    // System.out.println(HexUtil.encodeHex(rdata));
                     allBytes = ArrayUtil.addAll(allBytes, rdata);
+                    // 如果某个块的数据全为 0 则认为之后的块没有存数据，直接跳过
+                    if (ByteUtil.bytesToInt(rdata) == 0) {
+                        break;
+                    }
                 } else {
-                    System.err.println("读数据失败！块：" + i);
+                    System.err.println("读数据失败！块：" + b);
                 }
             }
         }
@@ -154,57 +167,55 @@ public class NFCReader {
 
     /**
      * 寻卡，寻卡后卡序列号写入 snr
+     * @return 找到则返回卡序列号字符串，没找到返回空字符串
      */
-    public int findCard() {
-        // 采用ALL模式寻卡，结束时执行 rf_halt(见 readMifareOne 中的 rf_halt)，避免寻卡总是一次对，一次错
-        resultCode = rf.rf_card(icDev, (short) 1, snr);
+    public String findCard() {
+        // 选择IDLE模式，在对卡进行读写操作，执行rf_halt()rf_halt指令中止卡操作后，只有当该卡离开并再次进入操作区时，读写器才能够再次对它进行操作
+        resultCode = rf.rf_card(icDev, (short) 0, curSnr);
+        String snrStr = "";
         if (resultCode == 0) {
             byte[] snrHex = new byte[9];
-            rf.hex_a(snr, snrHex, (short) 4);
-            String SnrStr = new String(snrHex, 0, 8);
-            System.out.println("寻卡成功，卡序列号：" + SnrStr);
-        } else {
-            System.err.println("寻卡失败！" + getErrCodeMsg());
+            rf.hex_a(curSnr, snrHex, (short) 4);
+            snrStr = new String(snrHex, 0, 8);
+            System.out.println("寻卡成功，卡序列号：" + snrStr);
         }
-        return resultCode;
+        return snrStr;
     }
 
     /**
      * 蜂鸣
-     * @param timeout 蜂鸣时长，单位毫秒
+     * @param millis 蜂鸣时长，单位毫秒
      */
-    public void beep(int timeout) {
-        if (timeout <= 0) return;
+    public void beep(int millis) {
+        if (millis <= 0) return;
         if (icDev != null) {
             // rf_beep timeout 单位是10毫秒
-            short beepTimout = (short) (timeout * 10);
+            short beepTimout = (short) (millis / 10);
             resultCode = rf.rf_beep(icDev, beepTimout);
         }
     }
 
-    /**
-     * TODO：多卡同时放入的问题
-     * @param args
-     * @throws InterruptedException
-     */
     public static void main(String[] args) throws InterruptedException {
         // rf32.dll 位于 jna jar 包根目录
         NFCReader con = new NFCReader();
         con.connect();
-        for (int i = 0; i < 20; i++) {
-            int resultCode = con.findCard();
-            if (resultCode == 0) {
+        Set<String> snrSet = new HashSet<>();
+        while (true) {
+            String snrStr = con.findCard();
+            if (snrSet.contains(snrStr)) continue;
+            if (StringUtils.isBlank(snrStr)) {
+                Thread.sleep(500);
+            } else {
+                snrSet.add(snrStr);
                 String jsonStr = con.readJson();
                 if (StringUtils.isBlank(jsonStr)) {
-                    System.out.println(jsonStr);
-                    con.beep(50);
-                } else {
                     System.err.println("未找到 JSON 字符串");
+                } else {
+                    System.out.println("jsonStr = " + jsonStr);
+                    con.beep(50);
                 }
-            } else {
-                Thread.sleep(500);
             }
         }
-		con.disconnect();
+//		con.disconnect();
     }
 }
