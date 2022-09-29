@@ -5,8 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7457381a-a80c-4743-b4d7-f54707c79ae6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JavaScanner/src/main/java/com/zhangmingge/demo/javascanner/controller/TestScanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaScanner/src/main/java/com/zhangmingge/demo/javascanner/controller/TestScanner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JavaCardReader/libs/comm-2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JavaCardReader/src/test/java/DeflaterUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JavaCardReader/src/test/java/TestEventListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JavaCardReader/src/test/java/TestUUID.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JavaCardReader/src/test/java/TestZip.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JavaCardReader/src/test/java/ZipStrUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaCardReader/.idea/libraries/libs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaCardReader/.idea/libraries/libs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaCardReader/src/main/java/entity/NFCReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaCardReader/src/main/java/entity/NFCReader.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,20 +48,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;ShowUsagesActions.previewPropertyKey&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/liuhao/Documents/GitHub/demo/JavaPrinter/src/main/java/com/zhangmingge/printer/escpos/mine&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.38850576&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "ShowUsagesActions.previewPropertyKey": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "1.8",
+    "last_opened_file_path": "C:/Users/liuhao/Desktop",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.38850576",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\liuhao\Documents\GitHub\demo\JavaPrinter\src\main\java\com\zhangmingge\printer\escpos\mine" />
@@ -182,6 +188,7 @@
       <workItem from="1662895425124" duration="1662000" />
       <workItem from="1662943379909" duration="353000" />
       <workItem from="1662943786143" duration="581000" />
+      <workItem from="1664072145170" duration="75000" />
     </task>
     <servers />
   </component>

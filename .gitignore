@@ -2,3 +2,5 @@ target
 .mvn
 mvnw.cmd
 JavaScanner/mvnw
+
+*.class
