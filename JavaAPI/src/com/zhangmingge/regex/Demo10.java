@@ -4,16 +4,23 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Mathcer.start(int i)/ Matcher.end(int i)/ Matcher.group(int i)
+ * 捕获组
  */
 public class Demo10 {
     public static void main(String[] args) {
-        Pattern p=Pattern.compile("\\d+");
-        Matcher m=p.matcher("我的QQ是:456456 我的电话是:0532214 我的邮箱是:aaa123@aaa.com");
-        while(m.find()) {
-            System.out.println(m.group());
-            System.out.print("start:"+m.start());
-            System.out.println(" end:"+m.end());
+        String line = "ABCDE";
+        String pattern = "((A)(B(C)))D";
+        Pattern r = Pattern.compile(pattern);
+        Matcher m = r.matcher(line);
+        if (m.find()) {
+            System.out.println(m.groupCount());
+            System.out.println(m.group(0));
+            System.out.println(m.group(1));
+            System.out.println(m.group(2));
+            System.out.println(m.group(3));
+            System.out.println(m.group(4));
+        } else {
+            System.out.println("无匹配");
         }
     }
 }

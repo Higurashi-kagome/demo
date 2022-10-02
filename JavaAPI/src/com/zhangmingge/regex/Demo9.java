@@ -21,9 +21,9 @@ public class Demo9 {
         System.out.println(m.group(2));   //返回2223,返回第二组匹配到的子字符串
         p = Pattern.compile("[a-z]+(\\d+)");
         m = p.matcher("aaa2223bb");
-        System.out.println(m.find());
-        System.out.println(m.group());
-        System.out.println(m.group(0));
-        System.out.println(m.group(1));
+        System.out.println(m.find());//匹配aaa2223
+        System.out.println(m.group());//返回aaa2223
+        System.out.println(m.group(0));//返回aaa2223
+        System.out.println(m.group(1));//返回2223
     }
 }
