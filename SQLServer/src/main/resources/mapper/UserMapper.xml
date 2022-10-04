@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zhangmingge.sqlserver.mapper.UserMapper">
+
+    <resultMap id="userMap" type="com.zhangmingge.sqlserver.entity.User">
+        <id property="id" column="id" javaType="java.lang.Integer"></id>
+        <result property="name" column="name" javaType="java.lang.String"></result>
+    </resultMap>
+
+    <select id="getAllUsers" resultMap="userMap">
+        select * from user_test
+    </select>
+
+    <insert id="addUser" parameterType="com.zhangmingge.sqlserver.entity.User">
+        insert into user_test ( id, name ) values ( #{id}, #{name} )
+    </insert>
+
+    <delete id="deleteUser" parameterType="com.zhangmingge.sqlserver.entity.User">
+        delete from user_test where name = #{name}
+    </delete>
+
+</mapper>
