@@ -37,13 +37,13 @@ public class AppTest
         DiskShare diskShare = SMBJUtils.getDiskShare(session, shareName);
         if (diskShare == null) return;
         File file = SMBJUtils.openFile(diskShare, "smartReader.html");
-        saveToLocal(file);
+        saveToLocal(file, "C:\\Users\\liuhao\\Desktop\\hello\\test.html");
     }
 
     /**
      * 读取文件内容到本地
      */
-    private void saveToLocal(File file) {
+    private void saveToLocal(File file, String path) {
         if (file == null) return;
         InputStream in = file.getInputStream();
         ByteArrayOutputStream out = new ByteArrayOutputStream();
@@ -54,8 +54,13 @@ public class AppTest
                 out.write(buffer, 0, len);
             }
             out.flush();
-            Path path = Paths.get("C:\\Users\\liuhao\\Desktop\\test.html");
-            Files.write(path, out.toByteArray());
+            Path p = Paths.get(path);
+            java.io.File f = new java.io.File(path);
+            if (f.isDirectory()) return;
+            java.io.File parentFile = f.getParentFile();
+            if (!parentFile.exists()) parentFile.mkdirs();
+            if (!f.exists()) f.createNewFile();
+            Files.write(p, out.toByteArray());
         } catch (IOException e) {
             System.err.println("写入文件失败");
             e.printStackTrace();
