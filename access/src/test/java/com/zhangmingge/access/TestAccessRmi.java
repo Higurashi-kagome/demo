@@ -15,18 +15,18 @@ public class TestAccessRmi {
             //生产地址
             String url = "jdbc:rmi://10.32.103.18/jdbc:odbc:all_num";
             //建立连接
-            con = DriverManager.getConnection(url, "", "Lx2008");
+            con = DriverManager.getConnection(url, "admin", "Lx2008");
             stmt = con.createStatement();
-            ResultSet rst = stmt.executeQuery("select * from num");
-            if (rst != null) {
-                while (rst.next()) {
-                    String id = rst.getInt("id") + "";
-//                    String name = new String(rst.getBytes("title"), "gbk");
-//                    String time = rst.getDate("date").toString();
-//                    String filePath = rst.getString("url");
-                    System.out.println(id);
-                }
-            }
+//            ResultSet rst = stmt.executeQuery("select * from num");
+//            if (rst != null) {
+//                while (rst.next()) {
+//                    String id = rst.getInt("id") + "";
+////                    String name = new String(rst.getBytes("title"), "gbk");
+////                    String time = rst.getDate("date").toString();
+////                    String filePath = rst.getString("url");
+//                    System.out.println(id);
+//                }
+//            }
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
