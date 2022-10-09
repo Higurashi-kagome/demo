@@ -1,6 +1,7 @@
 package com.zhangmingge;
 
 import com.hierynomus.msfscc.fileinformation.FileIdBothDirectoryInformation;
+import com.hierynomus.smbj.connection.Connection;
 import com.hierynomus.smbj.session.Session;
 import com.hierynomus.smbj.share.DiskShare;
 import com.hierynomus.smbj.share.File;
@@ -31,7 +32,8 @@ public class AppTest
      */
     @Test
     public void testSave() {
-        Session session = SMBJUtils.getSession(hostname, username, password);
+        Connection connection = SMBJUtils.getConnection(hostname);
+        Session session = SMBJUtils.getSession(connection, username, password);
         DiskShare diskShare = SMBJUtils.getDiskShare(session, shareName);
         if (diskShare == null) return;
         File file = SMBJUtils.openFile(diskShare, "smartReader.html");
@@ -70,7 +72,8 @@ public class AppTest
      */
     @Test
     public void testListFiles() {
-        Session session = SMBJUtils.getSession(hostname, username, password);
+        Connection connection = SMBJUtils.getConnection(hostname);
+        Session session = SMBJUtils.getSession(connection, username, password);
         DiskShare diskShare = SMBJUtils.getDiskShare(session, shareName);
         if (diskShare == null) return;
         ArrayList<String> strings = new ArrayList<>();

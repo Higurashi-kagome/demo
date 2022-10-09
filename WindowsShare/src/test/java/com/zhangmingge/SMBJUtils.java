@@ -16,25 +16,29 @@ import java.io.IOException;
 import java.util.EnumSet;
 
 public class SMBJUtils {
+
     /**
-     * 获取 Session
+     * 获取连接
      */
-    public static Session getSession(String hostname, String username, String password) {
-        Session session = null;
-        SMBClient client = new SMBClient(SmbConfig.createDefaultConfig());
-        Connection connection = null;
-        // 连接
+    public static Connection getConnection(String hostname) {
+        Connection connection;
         try {
+            SMBClient client = new SMBClient(SmbConfig.createDefaultConfig());
             connection = client.connect(hostname);
+            return connection;
         } catch (IOException e) {
             System.err.println("连接失败");
             e.printStackTrace();
-        } finally {
-            try {
-                if (connection != null) connection.close();
-            } catch (IOException e) { }
         }
-        // 认证
+        return null;
+    }
+
+    /**
+     * 获取 Session（认证）
+     */
+    public static Session getSession(Connection connection, String username, String password) {
+        if (connection == null) return null;
+        Session session;
         try {
             AuthenticationContext auth = new AuthenticationContext(username, password.toCharArray(), "");
             session = connection.authenticate(auth);
@@ -42,10 +46,6 @@ public class SMBJUtils {
         } catch (Exception e) {
             System.err.println("认证失败");
             e.printStackTrace();
-        } finally {
-            try {
-                if (session != null) session.close();
-            } catch (IOException e) { }
         }
         return null;
     }
