@@ -38,6 +38,13 @@ public class AppTest
         if (diskShare == null) return;
         File file = SMBJUtils.openFile(diskShare, "smartReader.html");
         saveToLocal(file, "C:\\Users\\liuhao\\Desktop\\hello\\test.html");
+        close(connection);
+    }
+
+    private void close(Connection connection) {
+        try {
+            if (connection != null) connection.close();
+        } catch (IOException e) { }
     }
 
     /**
@@ -87,5 +94,6 @@ public class AppTest
             strings.add(information.getFileName());
         }
         System.out.println(strings);
+        close(connection);
     }
 }
