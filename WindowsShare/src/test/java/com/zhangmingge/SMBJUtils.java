@@ -72,9 +72,16 @@ public class SMBJUtils {
     public static File openFile(DiskShare diskShare, String fileName) {
         if (diskShare == null || StrUtil.isBlank(fileName)) return null;
         if (".".equals(fileName) || "..".equals(fileName) || !diskShare.fileExists(fileName)) return null;
-        File file = diskShare.openFile(
-                fileName, EnumSet.of(AccessMask.GENERIC_READ), null,
-                SMB2ShareAccess.ALL, SMB2CreateDisposition.FILE_OPEN, null);
-        return file;
+        File file;
+        try {
+            file = diskShare.openFile(
+                    fileName, EnumSet.of(AccessMask.GENERIC_READ), null,
+                    SMB2ShareAccess.ALL, SMB2CreateDisposition.FILE_OPEN, null);
+            return file;
+        } catch (Exception e) {
+            System.err.println("获取文件出错");
+            e.printStackTrace();
+        }
+        return null;
     }
 }

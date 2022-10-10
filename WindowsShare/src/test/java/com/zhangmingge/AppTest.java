@@ -16,6 +16,9 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 访问局域网内的共享文件夹
+ */
 public class AppTest
 {
 
@@ -35,12 +38,14 @@ public class AppTest
         Connection connection = SMBJUtils.getConnection(hostname);
         Session session = SMBJUtils.getSession(connection, username, password);
         DiskShare diskShare = SMBJUtils.getDiskShare(session, shareName);
-        if (diskShare == null) return;
         File file = SMBJUtils.openFile(diskShare, "smartReader.html");
         saveToLocal(file, "C:\\Users\\liuhao\\Desktop\\hello\\test.html");
         close(connection);
     }
 
+    /**
+     * 关闭连接
+     */
     private void close(Connection connection) {
         try {
             if (connection != null) connection.close();
@@ -87,7 +92,10 @@ public class AppTest
         Connection connection = SMBJUtils.getConnection(hostname);
         Session session = SMBJUtils.getSession(connection, username, password);
         DiskShare diskShare = SMBJUtils.getDiskShare(session, shareName);
-        if (diskShare == null) return;
+        if (diskShare == null) {
+            close(connection);
+            return;
+        }
         ArrayList<String> strings = new ArrayList<>();
         List<FileIdBothDirectoryInformation> list = diskShare.list("");
         for (FileIdBothDirectoryInformation information : list) {
