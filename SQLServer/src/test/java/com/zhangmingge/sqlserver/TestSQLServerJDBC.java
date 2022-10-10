@@ -30,12 +30,12 @@ public class TestSQLServerJDBC {
             conn = DriverManager.getConnection(DBURL, DBUSER, DBPASSWORD);
             //实例化Statement对象
             stmt = conn.createStatement();
-            rs = stmt.executeQuery("select * from students");
+            rs = stmt.executeQuery("select * from user_test");
             while (rs.next()) {
                 String Id = rs.getString(1);
                 String Name = rs.getString(2);
-                System.out.print("学号:" + Id);
-                System.out.println(" 姓名:" + Name);
+                System.out.print("id:" + Id);
+                System.out.println(" name:" + Name);
                 System.out.println("------------------------------------");
             }
         } catch (Exception e) {
