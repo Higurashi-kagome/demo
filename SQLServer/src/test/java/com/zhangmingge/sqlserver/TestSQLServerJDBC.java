@@ -2,6 +2,9 @@ package com.zhangmingge.sqlserver;
 
 import java.sql.*;
 
+/**
+ * 使用 JDBC 连接
+ */
 public class TestSQLServerJDBC {
     //驱动路径
     private static final String DBDRIVER = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
