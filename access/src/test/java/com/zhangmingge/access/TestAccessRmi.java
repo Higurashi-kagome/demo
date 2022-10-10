@@ -4,6 +4,10 @@ import org.junit.jupiter.api.Test;
 
 import java.sql.*;
 
+/**
+ * 测试用 Rmi 远程连接 Access
+ * https://blog.csdn.net/zjsdrs/article/details/77542263
+ */
 public class TestAccessRmi {
     @Test
     public void executeQuery() {
