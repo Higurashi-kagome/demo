@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="scan_trigger_mode_entries">
+        <item>自动</item>
+<!--        <item>连续</item>-->
+        <item>手动</item>
+    </string-array>
+    <string-array name="scan_trigger_mode_entryValues">
+        <item>0</item>
+<!--        <item>1</item>-->
+        <item>2</item>
+    </string-array>
+    <string-array name="scan_output_mode_entries">
+        <item>Intent</item>
+    </string-array>
+    <string-array name="scan_output_mode_entryValues">
+        <item>0</item>
+    </string-array>
+    <string-array name="scan_sound_mode_entries">
+        <item>无</item>
+        <item>短促</item>
+        <item>尖锐</item>
+    </string-array>
+    <string-array name="scan_sound_mode_entryValues">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+</resources>

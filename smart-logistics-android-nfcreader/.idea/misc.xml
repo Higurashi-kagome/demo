@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/liuhao/AppData/Local/Android/Sdk/platforms/android-32/data/res/layout/simple_list_item_1.xml" value="0.23550724637681159" />
+        <entry key="..\:/Users/liuhao/Desktop/smart-logistics-android/app/src/main/res/menu/sample_read_text.xml" value="0.253125" />
+        <entry key="..\:/Users/liuhao/Desktop/smart-logistics-android/app/src/main/res/menu/sample_write_text.xml" value="0.253125" />
+        <entry key="..\:/Users/liuhao/Desktop/smart-logistics-android/app/src/main/res/menu/sampling_read_text.xml" value="0.253125" />
+        <entry key="..\:/Users/liuhao/Desktop/smart-logistics-android/app/src/main/res/menu/sampling_write_text.xml" value="0.253125" />
+        <entry key="..\:/Users/liuhao/Desktop/temp/smart-logistics-android/app/src/main/res/layout/acitivity_sample_show_accept.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/liuhao/Desktop/temp/smart-logistics-android/app/src/main/res/layout/acitivity_show_card_info.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/liuhao/Desktop/temp/smart-logistics-android/app/src/main/res/layout/activity_accept_direct_input.xml" value="0.1" />
+        <entry key="..\:/Users/liuhao/Desktop/temp/smart-logistics-android/app/src/main/res/layout/activity_accept_input.xml" value="0.264" />
+        <entry key="..\:/Users/liuhao/Desktop/temp/smart-logistics-android/app/src/main/res/layout/activity_change_password.xml" value="0.19202898550724637" />
+        <entry key="..\:/Users/liuhao/Desktop/temp/smart-logistics-android/app/src/main/res/layout/activity_clear_history.xml" value="0.19202898550724637" />
+        <entry key="..\:/Users/liuhao/Desktop/temp/smart-logistics-android/app/src/main/res/layout/activity_history.xml" value="0.264" />
+        <entry key="..\:/Users/liuhao/Desktop/temp/smart-logistics-android/app/src/main/res/layout/activity_history2.xml" value="0.20471014492753623" />
+        <entry key="..\:/Users/liuhao/Desktop/temp/smart-logistics-android/app/src/main/res/layout/activity_history_rec.xml" value="0.2346014492753623" />
+        <entry key="..\:/Users/liuhao/Desktop/temp/smart-logistics-android/app/src/main/res/layout/activity_holder_main.xml" value="0.1" />
+        <entry key="..\:/Users/liuhao/Desktop/temp/smart-logistics-android/app/src/main/res/layout/activity_login.xml" value="0.19202898550724637" />
+        <entry key="..\:/Users/liuhao/Desktop/temp/smart-logistics-android/app/src/main/res/layout/activity_qrcode.xml" value="0.18432971014492755" />
+        <entry key="..\:/Users/liuhao/Desktop/temp/smart-logistics-android/app/src/main/res/layout/activity_read_text.xml" value="0.19202898550724637" />
+        <entry key="..\:/Users/liuhao/Desktop/temp/smart-logistics-android/app/src/main/res/layout/activity_reload_unloading_place.xml" value="0.19202898550724637" />
+        <entry key="..\:/Users/liuhao/Desktop/temp/smart-logistics-android/app/src/main/res/layout/activity_sales_return.xml" value="0.19202898550724637" />
+        <entry key="..\:/Users/liuhao/Desktop/temp/smart-logistics-android/app/src/main/res/layout/activity_sample_rec.xml" value="0.20471014492753623" />
+        <entry key="..\:/Users/liuhao/Desktop/temp/smart-logistics-android/app/src/main/res/layout/activity_sampling_rec.xml" value="0.20471014492753623" />
+        <entry key="..\:/Users/liuhao/Desktop/temp/smart-logistics-android/app/src/main/res/layout/activity_scan.xml" value="0.22644927536231885" />
+        <entry key="..\:/Users/liuhao/Desktop/temp/smart-logistics-android/app/src/main/res/layout/activity_start_receipt.xml" value="0.1" />
+        <entry key="..\:/Users/liuhao/Desktop/temp/smart-logistics-android/app/src/main/res/layout/activity_start_sample.xml" value="0.1" />
+        <entry key="..\:/Users/liuhao/Desktop/temp/smart-logistics-android/app/src/main/res/layout/activity_start_sampling.xml" value="0.2" />
+        <entry key="..\:/Users/liuhao/Desktop/temp/smart-logistics-android/app/src/main/res/layout/activity_write_text.xml" value="0.10416666666666667" />
+        <entry key="..\:/Users/liuhao/Desktop/temp/smart-logistics-android/app/src/main/res/layout/fragment_settings.xml" value="0.22644927536231885" />
+        <entry key="..\:/Users/liuhao/Desktop/temp/smart-logistics-android/app/src/main/res/layout/item_recycler_view.xml" value="0.1" />
+        <entry key="..\:/Users/liuhao/Desktop/temp/smart-logistics-android/app/src/main/res/menu/sample_read_text.xml" value="0.253125" />
+        <entry key="..\:/Users/liuhao/Desktop/temp/smart-logistics-android/app/src/main/res/menu/sample_write_text.xml" value="0.253125" />
+        <entry key="..\:/Users/liuhao/Desktop/temp/smart-logistics-android/app/src/main/res/menu/sampling_write_text.xml" value="0.253125" />
+        <entry key="..\:/Users/liuhao/Desktop/temp/smart-logistics-android/app/src/main/res/xml/scan_settings.xml" value="0.19202898550724637" />
+        <entry key="..\:/Users/liuhao/OneDrive/work/01/source/smart-logistics-android/app/src/main/res/layout/activity_holder_main.xml" value="0.18432971014492755" />
+        <entry key="..\:/Users/liuhao/OneDrive/work/01/source/smart-logistics-android/app/src/main/res/layout/activity_main.xml" value="0.18432971014492755" />
+        <entry key="..\:/Users/liuhao/OneDrive/work/01/source/smart-logistics-android/app/src/main/res/layout/activity_reload_unloading_place.xml" value="0.19202898550724637" />
+        <entry key="..\:/Users/liuhao/OneDrive/work/01/source/smart-logistics-android/app/src/main/res/layout/activity_scan.xml" value="0.19202898550724637" />
+        <entry key="..\:/Users/liuhao/OneDrive/work/01/source/smart-logistics-android/app/src/main/res/layout/activity_start_receipt.xml" value="0.19202898550724637" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+  <component name="SvnBranchConfigurationManager">
+    <option name="myConfigurationMap">
+      <map>
+        <entry key="$PROJECT_DIR$">
+          <value>
+            <SvnBranchConfiguration>
+              <option name="trunkUrl" value="https://192.168.1.16:15860/svn/keyan/android/smart-logistics-android" />
+            </SvnBranchConfiguration>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

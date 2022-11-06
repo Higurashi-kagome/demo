@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <SwitchPreference
+        android:defaultValue="true"
+        android:key="scan_turnon_switch"
+        android:summaryOff="@string/scan_off"
+        android:summaryOn="@string/scan_on"
+        android:title="@string/scan_service" />
+    <ListPreference
+        android:defaultValue="2"
+        android:entries="@array/scan_trigger_mode_entries"
+        android:entryValues="@array/scan_trigger_mode_entryValues"
+        android:key="scan_trigger_mode"
+        android:persistent="false"
+        android:title="@string/scan_trigger_mode" />
+    <ListPreference
+        android:defaultValue="2"
+        android:entries="@array/scan_output_mode_entries"
+        android:entryValues="@array/scan_output_mode_entryValues"
+        android:key="scan_output_mode"
+        android:persistent="false"
+        android:title="@string/scan_output_mode"
+        app:isPreferenceVisible="false"/>
+    <ListPreference
+        android:defaultValue="2"
+        android:entries="@array/scan_sound_mode_entries"
+        android:entryValues="@array/scan_sound_mode_entryValues"
+        android:key="scan_sound_mode"
+        android:persistent="false"
+        android:title="@string/scan_sound_mode" />
+    <CheckBoxPreference
+        android:key="scan_trigger_lock"
+        android:summary="@string/scan_lock_trigger_summary"
+        android:title="@string/scan_lock_trigger" />
+    <PreferenceScreen
+        android:key="scan_reset_def"
+        android:summary="@string/scan_reset_def_summary"
+        android:title="@string/scan_reset_def" />
+</PreferenceScreen>

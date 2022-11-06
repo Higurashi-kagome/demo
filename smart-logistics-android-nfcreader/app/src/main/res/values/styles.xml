@@ -1,0 +1,6 @@
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.Material3.Light">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+</resources>

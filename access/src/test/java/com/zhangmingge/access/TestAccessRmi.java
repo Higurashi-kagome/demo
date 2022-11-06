@@ -6,7 +6,7 @@ import java.sql.*;
 
 /**
  * 测试用 Rmi 远程连接 Access
- * https://blog.csdn.net/zjsdrs/article/details/77542263
+ * <a href="https://blog.csdn.net/zjsdrs/article/details/77542263">...</a>
  */
 public class TestAccessRmi {
     @Test
@@ -19,7 +19,7 @@ public class TestAccessRmi {
             //生产地址
             String url = "jdbc:rmi://10.32.103.18/jdbc:odbc:all_num";
             //建立连接
-            con = DriverManager.getConnection(url, "admin", "Lx2008");
+            con = DriverManager.getConnection(url, "", "Lx2008");
             stmt = con.createStatement();
 //            ResultSet rst = stmt.executeQuery("select * from num");
 //            if (rst != null) {

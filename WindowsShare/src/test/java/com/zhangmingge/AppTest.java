@@ -22,13 +22,13 @@ import java.util.List;
 public class AppTest
 {
 
-    private String hostname = "192.168.124.16";
+    private String hostname = "10.32.103.18";
 
-    private String username = "znwl";
+    private String username = "znsw";
 
-    private String password = "Zlzn_2021";
+    private String password = "Znsw_2022";
 
-    private String shareName = "Reader_Web_Service_V1.0.0.7_20211112";
+    private String shareName = "mdb";
 
     /**
      * 测试下载文件
@@ -38,8 +38,8 @@ public class AppTest
         Connection connection = SMBJUtils.getConnection(hostname);
         Session session = SMBJUtils.getSession(connection, username, password);
         DiskShare diskShare = SMBJUtils.getDiskShare(session, shareName);
-        File file = SMBJUtils.openFile(diskShare, "smartReader.html");
-        saveToLocal(file, "C:\\Users\\liuhao\\Desktop\\hello\\test.html");
+        File file = SMBJUtils.openFile(diskShare, "all_num.mdb");
+        saveToLocal(file, "C:\\Users\\liuhao\\Desktop\\temp\\test.mdb");
         close(connection);
     }
 
