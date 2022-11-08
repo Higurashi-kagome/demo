@@ -154,11 +154,11 @@ public class Utils {
         }
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @NonNull
     public static NdefMessage getNdefMessage(String str) {
-        NdefRecord[] records = new NdefRecord[]{createTextRecord(str)};
-        NdefMessage ndefMessage = new NdefMessage(records);
-        return ndefMessage;
+        NdefRecord[] records = new NdefRecord[]{NdefRecord.createTextRecord(Locale.CHINA.getLanguage(), str)};
+        return new NdefMessage(records);
     }
 
     /**

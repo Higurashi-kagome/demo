@@ -57,18 +57,6 @@ public class SampleReadTextActivity extends BaseReadTextActivity implements Need
             dataInCard = getCardData(intent);
             if (dataInCard == null) return;
             if (Validator.isAcceptCardData(dataInCard)) {
-                // 先判断是否完成两次采样
-                if (Validator.isAcceptExhausted(dataInCard)) {
-                    String info = "该卡已完成两次采样";
-                    Toast.makeText(this, info, Toast.LENGTH_SHORT).show();
-                    LogUtil.d(info);
-                    return;
-                }
-                // 再判断是否采样过
-                if (Validator.canWriteAsAccept(dataInCard)) {
-                    showSampledConfirmDialog(dataInCard);
-                    return;
-                }
                 updateAcceptCard(dataInCard);
             } else {
                 String info = "不是收货卡！";
