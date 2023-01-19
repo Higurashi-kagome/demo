@@ -23,6 +23,7 @@ public class AppTest
 {
 
     private String hostname = "10.32.103.18";
+//    private String hostname = "XL-201301101214";
 
     private String username = "znsw";
 
@@ -30,16 +31,20 @@ public class AppTest
 
     private String shareName = "mdb";
 
+    public static void main(String[] args) {
+        new AppTest().testSave();
+    }
+
     /**
      * 测试下载文件
      */
-    @Test
     public void testSave() {
         Connection connection = SMBJUtils.getConnection(hostname);
         Session session = SMBJUtils.getSession(connection, username, password);
         DiskShare diskShare = SMBJUtils.getDiskShare(session, shareName);
         File file = SMBJUtils.openFile(diskShare, "all_num.mdb");
         saveToLocal(file, "C:\\Users\\liuhao\\Desktop\\temp\\test.mdb");
+//        saveToLocal(file, "C:\\Users\\Administrator\\Desktop\\temp\\test.mdb");
         close(connection);
     }
 
@@ -87,7 +92,6 @@ public class AppTest
     /**
      * 列出文件和文件夹
      */
-    @Test
     public void testListFiles() {
         Connection connection = SMBJUtils.getConnection(hostname);
         Session session = SMBJUtils.getSession(connection, username, password);
