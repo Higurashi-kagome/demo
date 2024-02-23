@@ -1,4 +1,6 @@
-package com.zhangmingge.test;
+package com.zhangmingge.rs232;
+
+import gnu.io.*;
 
 import java.util.Enumeration;
 
@@ -27,7 +29,6 @@ public class Demo {
             com11 = CommPortIdentifier.getPortIdentifier("COM11");
             com21 = CommPortIdentifier.getPortIdentifier("COM21");
         } catch (NoSuchPortException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
 
